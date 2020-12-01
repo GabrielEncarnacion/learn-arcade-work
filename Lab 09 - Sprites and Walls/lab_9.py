@@ -13,7 +13,7 @@ VIEWPORT_MARGIN = 50
 
 MOVEMENT_SPEED = 5
 
-NUMBER_OF_COINS = 79
+NUMBER_OF_COINS = 80
 
 
 class MyGame(arcade.Window):
@@ -51,7 +51,7 @@ class MyGame(arcade.Window):
         self.coin_list = arcade.SpriteList()
 
         # Set up the player
-        self.player_sprite = arcade.Sprite("tanks_tankGreen1.png", 0.96)
+        self.player_sprite = arcade.Sprite("tanks_tankGreen1.png", 1)
         self.player_sprite.center_x = 64
         self.player_sprite.center_y = 270
         self.player_list.append(self.player_sprite)
@@ -65,7 +65,6 @@ class MyGame(arcade.Window):
                     wall.center_x = x
                     wall.center_y = y
                     self.wall_list.append(wall)
-
 
         for x in range(0, 1000, 30):
             wall = arcade.Sprite("foliagePack_010.png", SPRITE_SCALING)
@@ -114,7 +113,6 @@ class MyGame(arcade.Window):
             [960, 1000],
             [992, 1000]]
 
-
         for coordinate in coordinate_list:
             wall = arcade.Sprite("foliagePack_010.png", SPRITE_SCALING)
             # Icon from kenny.nl
@@ -124,28 +122,28 @@ class MyGame(arcade.Window):
 
         # List of walls
         coordinate_list = [[1000, 0],
-            [1000, 33],
-            [1000, 65],
-            [1000, 97],
-            [1000, 129],
-            [1000, 161],
-            [1000, 193],
-            [1000, 225],
-            [1000, 257],
-            [1000, 289],
-            [1000, 321],
-            [1000, 353],
-            [1000, 385],
-            [1000, 417],
-            [1000, 449],
-            [1000, 481],
-            [1000, 513],
-            [1000, 545],
-            [1000, 577],
-            [1000, 607],
-            [1000, 641],
-            [1000, 673],
-            [1000, 705],
+            [1000, 32],
+            [1000, 64],
+            [1000, 96],
+            [1000, 128],
+            [1000, 160],
+            [1000, 192],
+            [1000, 224],
+            [1000, 256],
+            [1000, 288],
+            [1000, 320],
+            [1000, 352],
+            [1000, 384],
+            [1000, 416],
+            [1000, 448],
+            [1000, 480],
+            [1000, 512],
+            [1000, 546],
+            [1000, 576],
+            [1000, 608],
+            [1000, 640],
+            [1000, 672],
+            [1000, 704],
             [1000, 736],
             [1000, 768],
             [1000, 800],
@@ -165,7 +163,6 @@ class MyGame(arcade.Window):
             self.wall_list.append(wall)
 
         for i in range(NUMBER_OF_COINS):
-
 
             coin = arcade.Sprite("coin_01.png", .6)
             # Icon from kenny.nl
@@ -208,8 +205,8 @@ class MyGame(arcade.Window):
         self.player_list.draw()
         self.coin_list.draw()
 
-        output = f"Score: {self.score}"
-        arcade.draw_text(output, -500, 500, arcade.color.BLACK, 36)
+        output = f"Points: {self.score}"
+        arcade.draw_text(output, 500, 500, arcade.color.BLACK, 36)
 
         if len(self.coin_list) == 0:
             output = f"WASTED!"

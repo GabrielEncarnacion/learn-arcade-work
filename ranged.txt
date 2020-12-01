@@ -1,0 +1,3 @@
+a stuffed animal,10,
+a shoe,15,
+a book,20,

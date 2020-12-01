@@ -1,0 +1,2 @@
+more alcohol bottle,5,luck,
+a water bottle,10,health,

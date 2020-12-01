@@ -13,7 +13,7 @@ SCREEN_HEIGHT = 600
 SCREEN_TITLE = "Lab_8"
 
 
-class Human(arcade.Sprite):
+class Humans(arcade.Sprite):
 
     def reset_pos(self):
         # Reset the humans to a random spot above the screen
@@ -83,7 +83,7 @@ class MyGame(arcade.Window):
         # Don't show the mouse cursor
         self.set_mouse_visible(False)
 
-        arcade.set_background_color(arcade.color.YELLOW)
+        arcade.set_background_color(arcade.color.BLACK_LEATHER_JACKET)
 
     def setup(self):
         """ Set up the game and initialize the variables. """
@@ -108,14 +108,14 @@ class MyGame(arcade.Window):
 
             # Create the humans instance
             # Humans image from kenney.nl
-            humans = Humans(":resources:images/items/character_malePerson_run1.png", SPRITE_SCALING_HUMANS)
+            humans = Humans("character_malePerson_run1.png", SPRITE_SCALING_HUMANS)
 
             # Position the humans
             humans.center_x = random.randrange(SCREEN_WIDTH)
             humans.center_y = random.randrange(SCREEN_HEIGHT)
 
-            # Add the coin to the lists
-            self.humans_list.append(coin)
+            # Add the humans to the lists
+            self.humans_list.append(humans)
 
         # Create the bullets
         for i in range(BULLETS_COUNT):
@@ -144,8 +144,8 @@ class MyGame(arcade.Window):
         output = f"Score: {self.score}"
         arcade.draw_text(output, 10, 20, arcade.color.BLACK, 14)
 
-        if len(self.coin_list) == 0:
-            arcade.draw_text("WASTED!", 100, 200, arcade.color.BLACK, 100)
+        if len(self.humans_list) == 0:
+            arcade.draw_text("You have survived!", 100, 200, arcade.color.BLACK, 100)
 
     def on_mouse_motion(self, x, y, dx, dy):
 

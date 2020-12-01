@@ -1,0 +1,3 @@
+put obstacle on floor,10,
+close doors as you run,15,
+spill water on the floor making them trip,20,

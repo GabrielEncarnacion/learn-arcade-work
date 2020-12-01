@@ -1,0 +1,3 @@
+put on a shirt, 10,
+put on a shirt and a sweater, 15,
+put on a shirt, sweater and a blanket to cover, 20,
