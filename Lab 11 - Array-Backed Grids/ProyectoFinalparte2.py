@@ -181,31 +181,31 @@ def loot(luck, genCharacter):
 
         print(name)
     if itemType == "attack":
-        genCharacter.setAttack(genCharacter.getAttack() + value)
+        genCharacter.set_attack(genCharacter.get_attack() + value)
         print("Your new attack is...")
-        print(genCharacter.getAttack())
+        print(genCharacter.get_attack())
 
     elif itemType == "ranged":
-        genCharacter.setRanged(genCharacter.getRanged() + value)
+        genCharacter.set_ranged(genCharacter.get_ranged() + value)
         print("Your new Ranged Attack is...")
-        print(genCharacter.getRanged())
+        print(genCharacter.get_ranged())
 
     elif itemType == "defense":
-        genCharacter.setDefense(genCharacter.getDefense() + value)
+        genCharacter.set_defense(genCharacter.get_defense() + value)
         print("Your new defense is...")
-        print(genCharacter.getDefense())
+        print(genCharacter.get_defense())
 
     else:
 
         if splitItemLine[2] == "luck":
-            genCharacter.setLuck(genCharacter.getLuck() + value)
+            genCharacter.set_luck(genCharacter.get_luck() + value)
             print("Your new Luck  is...")
-            print(genCharacter.getLuck())
+            print(genCharacter.get_luck())
 
         elif splitItemLine[2] == "health":
-            genCharacter.setHealth(genCharacter.getLuck() + value)
+            genCharacter.set_health(genCharacter.get_luck() + value)
             print("Your new Health  is...")
-            print(genCharacter.getHealth())
+            print(genCharacter.get_health())
 
 genCharacter = Kid(100, 10, 11, 12, 13,  "Gabriel")
 

@@ -6,6 +6,8 @@ import random
 import time
 import math
 
+# creating class variable "kid"
+
 
 class Kid:
     def __init__(self, kid_health, kid_attack, kid_luck, kid_ranged, kid_defense, kid_name):
@@ -16,6 +18,8 @@ class Kid:
         self.kid_name = kid_name
         self.kid_defense = kid_defense
         print("kid_health", kid_health, "")
+
+    # creating getters and setters for the class variable "kid"
 
     def get_health(self):
         return self.kid_health
@@ -53,6 +57,12 @@ class Kid:
     def set_defense(self, new_defense):
         self.kid_defense = new_defense
 
+ # Youtube/github, L. (2020, June 23). Advanced Text Adventure. Retrieved December 02, 2020,
+# from https://github.com/learntocodeGCSE/AdvancedTextAdventure/blob/master/Advanced%20Text%20Adventure%20Part%201%20-%20Hero%20Class.py
+
+
+# creating class variable "enemy"
+
 
 class Enemy:
 
@@ -63,6 +73,8 @@ class Enemy:
         self.kid_ranged = enemy_ranged
         self.kid_name = enemy_name
         print("Health", enemy_health, "")
+
+# creating getters and setters for the class variable "enemy"
 
     def get_health(self):
         return self.enemy_health
@@ -94,6 +106,8 @@ class Enemy:
     def set_name(self, new_name):
         self.enemy_name = new_name
 
+# creating class variable "Boss"
+
 
 class Boss:
     def __init__(self, enemy_health, enemy_attack1, enemy_power, enemy_ranged, enemy_name, enemy_super_power_move):
@@ -106,6 +120,8 @@ class Boss:
 
     def set_super(self, new_super_power_move):
         self.SuperPowerMove = new_super_power_move
+
+# randomizing my files to choose random texts
 
     def enemy_gen(level_boss):
         file = open("adjectives.txt", "r")
@@ -137,6 +153,11 @@ class Boss:
 level_boss = True
 
 
+# Youtube/github, L. (2020, June 23). Advanced Text Adventure. Retrieved December 02, 2020,
+# from https://github.com/learntocodeGCSE/AdvancedTextAdventure/blob/master/Advanced%20Text%20Adventure%20Part%202%20-%20Enemy%20Class%20%26%20Enemy%20Generator.py
+
+# creating attack variables
+
 def enemy_attack(hit_chance, attack_value, name, defense):
     print(name, "is getting ready to attack!!")
     hit = random.randint(0, 10)
@@ -148,6 +169,8 @@ def enemy_attack(hit_chance, attack_value, name, defense):
     else:
         print("The enemies missed!")
         return 0
+
+# creating the chance and luck variables
 
 
 def hitchance(luck):
@@ -166,6 +189,8 @@ def isdead(health):
         return True
     else:
         return False
+
+# loot variable
 
 
 def loot(luck, gen_character1):
@@ -189,6 +214,9 @@ def loot(luck, gen_character1):
         value = int(split_item_line[1])
 
         print(name)
+
+# if statements regarding what would happen if you choose to act in the game
+
     if item_type == "attack":
         gen_character1.set_attack(gen_character1.get_attack() + value)
         print("Your new attack is...")
@@ -204,6 +232,7 @@ def loot(luck, gen_character1):
         print("Your new defense is...")
         print(gen_character1.get_defense())
 
+# what you caused because of the contingency concept in the game
     else:
 
         if split_item_line[2] == "luck":
@@ -217,7 +246,7 @@ def loot(luck, gen_character1):
             print(gen_character1.get_health())
 
 
-gen_character = Kid(100, 10, 11, 12, 13, "")
+gen_character = Kid(100, 10, 11, 12, 13, "Little Timmy")
 
 pprint(vars(gen_character))
 
@@ -230,6 +259,9 @@ loot(100, gen_character)
 
 
 pprint(vars(gen_character))
+
+# Youtube/github, L. (2020, July 2). Advanced Text Adventure. Retrieved December 02, 2020,
+# from https://github.com/learntocodeGCSE/AdvancedTextAdventure/blob/master/Advanced%20Text%20Adventure%20Part%203.py
 
 
 def create_class():
@@ -251,6 +283,9 @@ def create_class():
     print("Spinning Bottle...")
     kid_luck = random.randint(0, 4)
     print("Your Kid has", kid_luck, "Luck out of 4")
+
+# Youtube/github, L. (2020, October 23). Advanced Text Adventure. Retrieved December 02, 2020,
+# from https://github.com/learntocodeGCSE/AdvancedTextAdventure/blob/master/Advanced%20Text%20Adventure%20Part%204.py
 
     c = "3"
     time.sleep(1)
@@ -286,15 +321,17 @@ def game_over(enemy_dead):
         print("Better luck next time!!")
         exit()
 
+# Youtube/github, L. (2020, November 13). Advanced Text Adventure. Retrieved December 02, 2020,
+# https://github.com/learntocodeGCSE/AdvancedTextAdventure/blob/master/Advanced%20Text%20Adventure%20Part%205%20COMPLETE.py
+ # <<<<START OF GAME OF ADVENTURE>>>>
+# intro to game
+
 
 def display_intro():
     print("Its a Friday night, you are tired of school and fed up with your entire family.")
     print("You have decided to get full blasted Drunk.")
     print("Survive not getting caught Drunk by your family and you'll win!")
     print("Go back to your room and you lose :(")
-
-
- # <<<<START OF GAME OF ADVENTURE>>>>
 
 
 class Room:
@@ -315,7 +352,8 @@ def main():
 
     # Create room 0
     room = Room("You are in your bedroom" 
-                " You can go (E) and go into the man cave, or go (SE) to the bar", None, None, 5, None, None, None, 6, None)
+                " You can go (E) and go into the man cave, or go (SE) to the bar",
+                None, None, 5, None, None, None, 6, None)
     room_list.append(room)
     time.sleep(2)
 
@@ -489,4 +527,5 @@ class_data = create_class()
 second = Kid(class_data[0], class_data[1], class_data[2], class_data[3], class_data[4], class_data[5])
 pprint(vars(second))
 display_intro()
+# All copyright text is properly cited and all full credit is given to its authors.
 main()
